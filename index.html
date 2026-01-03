@@ -2,24 +2,25 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Verification</title>
+  <title>Checking access…</title>
 </head>
 <body>
-  <h3>Verifying you are human…</h3>
+  <p>Checking browser integrity…</p>
 
   <script>
     let human = false;
 
-    document.addEventListener("mousemove", () => human = true);
-    document.addEventListener("touchstart", () => human = true);
+    ["mousemove","keydown","touchstart"].forEach(e =>
+      document.addEventListener(e, () => human = true)
+    );
 
     setTimeout(() => {
       if (human) {
-        window.location.href = "https://discord.gg/HgEGcHMK6V";
+        window.location.href = "https://discord.gg/YOURINVITE";
       } else {
-        document.body.innerHTML = "Verification failed.";
+        document.body.innerHTML = "Access denied.";
       }
-    }, 2000);
+    }, 5000);
   </script>
 </body>
 </html>
