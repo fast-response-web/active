@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Verification</title>
+</head>
+<body>
+  <h3>Verifying you are human…</h3>
+
+  <script>
+    let human = false;
+
+    document.addEventListener("mousemove", () => human = true);
+    document.addEventListener("touchstart", () => human = true);
+
+    setTimeout(() => {
+      if (human) {
+        window.location.href = "https://discord.gg/HgEGcHMK6V";
+      } else {
+        document.body.innerHTML = "Verification failed.";
+      }
+    }, 2000);
+  </script>
+</body>
+</html>
